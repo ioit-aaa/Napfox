@@ -3,12 +3,12 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 pluginManagement {
-    if (!gradle.root.hasProperty("mozconfig")){
+/*    if (!gradle.root.hasProperty("mozconfig")){
         apply from: file('../gradle/mozconfig.gradle')
     } else {
         gradle.ext.mozconfig = gradle.root.mozconfig
     }
-
+*/
     repositories {
         gradle.mozconfig.substs.GRADLE_MAVEN_REPOSITORIES.each { repository ->
             maven {
@@ -40,10 +40,10 @@ dependencyResolutionManagement {
 }
 
 ext.topsrcdir = rootProject.projectDir.absolutePath.minus("mobile/android/fenix")
-
+/*
 apply from: file('../shared-settings.gradle')
 apply from: file('../autopublish-settings.gradle')
-
+*/
 include ':app'
 include ':mozilla-detekt-rules'
 include ':benchmark'
